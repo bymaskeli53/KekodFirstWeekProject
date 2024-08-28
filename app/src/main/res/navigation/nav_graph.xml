@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.kekodfirstweekproject.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_kindnessFragment"
+            app:destination="@id/kindnessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kindnessFragment"
+        android:name="com.example.kekodfirstweekproject.KindnessFragment"
+        android:label="KindnessFragment" />
+    <fragment
+        android:id="@+id/givingFragment"
+        android:name="com.example.kekodfirstweekproject.GivingFragment"
+        android:label="fragment_giving"
+        tools:layout="@layout/fragment_giving" />
+    <fragment
+        android:id="@+id/happinessFragment"
+        android:name="com.example.kekodfirstweekproject.HappinessFragment"
+        android:label="fragment_happiness"
+        tools:layout="@layout/fragment_happiness" />
+    <fragment
+        android:id="@+id/optimismFragment"
+        android:name="com.example.kekodfirstweekproject.OptimismFragment"
+        android:label="fragment_optimism"
+        tools:layout="@layout/fragment_optimism" />
+    <fragment
+        android:id="@+id/respectFragment"
+        android:name="com.example.kekodfirstweekproject.RespectFragment"
+        android:label="fragment_respect"
+        tools:layout="@layout/fragment_respect" />
 </navigation>
