@@ -1,11 +1,17 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
     namespace = "com.example.kekodfirstweekproject"
     compileSdk = 34
+
+    buildFeatures {
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId = "com.example.kekodfirstweekproject"
@@ -36,6 +42,12 @@ android {
 }
 
 dependencies {
+    val nav_version = "2.7.7"
+
+    // navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
