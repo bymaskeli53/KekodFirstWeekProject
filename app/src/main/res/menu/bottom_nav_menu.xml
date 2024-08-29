@@ -6,11 +6,4 @@
         android:icon="@drawable/ic_launcher_background"
         android:title="@string/home" />
 
-
-
-
-
-
-
-
 </menu>

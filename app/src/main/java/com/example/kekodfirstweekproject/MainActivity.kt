@@ -11,7 +11,9 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.kekodfirstweekproject.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,12 +31,28 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.findNavController()
 
 
-
+        //binding.bottomNavView.setupWithNavController(navController)
         NavigationUI.setupWithNavController(binding.bottomNavView, navController)
+      // bottomNavItemChangeListener(binding.bottomNavView)
+
 
 
     }
 
-    override fun onSupportNavigateUp(): Boolean = super.onSupportNavigateUp() || navController.navigateUp()
+
+
+
+
+   // override fun onSupportNavigateUp(): Boolean = super.onSupportNavigateUp() || navController.navigateUp()
+
+    private fun bottomNavItemChangeListener(navView: BottomNavigationView) {
+        navView.setOnItemSelectedListener { item ->
+            if (item.itemId != navView.selectedItemId) {
+                navController.popBackStack(item.itemId, inclusive = false, saveState = true)
+                navController.navigate(item.itemId)
+            }
+            true
+        }
+    }
 
     }

@@ -12,12 +12,8 @@ abstract class BaseFragment<T : ViewBinding>(
     private val inflate: (LayoutInflater, ViewGroup?, Boolean) -> T,
     @LayoutRes private val layoutResId: Int,
 ) : Fragment(layoutResId) {
-
+    protected val binding get() = _binding!!
     private var _binding: T? = null
-
-    abstract fun T.bindingView()
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,19 +21,11 @@ abstract class BaseFragment<T : ViewBinding>(
         savedInstanceState: Bundle?,
     ): View? {
         _binding = inflate(inflater, container, false)
-
-        return _binding?.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        _binding?.bindingView()
+        return binding.root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
-
 }
