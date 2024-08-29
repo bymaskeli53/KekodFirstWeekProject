@@ -8,4 +8,5 @@ data class SwitchCaseAttributes(
     val id: Int,
     val switch: MaterialSwitch,
     val title: String,
+    val icon: Int,
 )

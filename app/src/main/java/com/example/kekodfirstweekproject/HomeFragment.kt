@@ -1,6 +1,7 @@
 package com.example.kekodfirstweekproject
 
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
@@ -27,11 +28,11 @@ class HomeFragment :
         super.onViewCreated(view, savedInstanceState)
 
         switchArrayList = mutableListOf(
-            SwitchCaseAttributes(R.id.happinessFragment, binding.switchHappiness, "Happiness"),
-            SwitchCaseAttributes(R.id.kindnessFragment, binding.switchKindness, "Kindness"),
-            SwitchCaseAttributes(R.id.optimismFragment, binding.switchOptimism, "Optimism"),
-            SwitchCaseAttributes(R.id.givingFragment, binding.switchGiving, "Giving"),
-            SwitchCaseAttributes(R.id.respectFragment, binding.switchRespect, "Respect"),
+            SwitchCaseAttributes(R.id.happinessFragment, binding.switchHappiness, "Happiness", icon = R.drawable.happiness),
+            SwitchCaseAttributes(R.id.kindnessFragment, binding.switchKindness, "Kindness",icon = R.drawable.kindness),
+            SwitchCaseAttributes(R.id.optimismFragment, binding.switchOptimism, "Optimism", icon = R.drawable.optimism),
+            SwitchCaseAttributes(R.id.givingFragment, binding.switchGiving, "Giving", icon = R.drawable.giving),
+            SwitchCaseAttributes(R.id.respectFragment, binding.switchRespect, "Respect", icon = R.drawable.respect),
         )
 
         bottomNavigationView =
@@ -73,8 +74,12 @@ class HomeFragment :
                         Menu.NONE,
                         switchCaseAttributes.id,
                         Menu.NONE,
-                        switchCaseAttributes.title
-                    )
+                        switchCaseAttributes.title).setIcon(switchCaseAttributes.icon)
+                    if (switchCaseAttributes.id == R.id.respectFragment) {
+                        playRespectSound()
+                    }
+
+
                 } else {
                     Toast.makeText(requireContext(), "You can only add 5 items", Toast.LENGTH_SHORT)
                         .show()
@@ -113,6 +118,14 @@ class HomeFragment :
         }
 
 
+    }
+
+    private fun playRespectSound() {
+        val mediaPlayer = MediaPlayer.create(requireContext(), R.raw.respect)
+        mediaPlayer.start()
+        mediaPlayer.setOnCompletionListener {
+            mediaPlayer.release() // Ses bittiğinde MediaPlayer'ı serbest bırakın
+        }
     }
 }
 

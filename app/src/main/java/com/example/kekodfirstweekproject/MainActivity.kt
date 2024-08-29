@@ -31,9 +31,9 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.findNavController()
 
 
-        //binding.bottomNavView.setupWithNavController(navController)
+
         NavigationUI.setupWithNavController(binding.bottomNavView, navController)
-      // bottomNavItemChangeListener(binding.bottomNavView)
+
 
 
 
@@ -43,16 +43,16 @@ class MainActivity : AppCompatActivity() {
 
 
 
-   // override fun onSupportNavigateUp(): Boolean = super.onSupportNavigateUp() || navController.navigateUp()
 
-    private fun bottomNavItemChangeListener(navView: BottomNavigationView) {
-        navView.setOnItemSelectedListener { item ->
-            if (item.itemId != navView.selectedItemId) {
-                navController.popBackStack(item.itemId, inclusive = false, saveState = true)
-                navController.navigate(item.itemId)
-            }
-            true
-        }
-    }
+
+//    private fun bottomNavItemChangeListener(navView: BottomNavigationView) {
+//        navView.setOnItemSelectedListener { item ->
+//            if (item.itemId != navView.selectedItemId) {
+//                navController.popBackStack(item.itemId, inclusive = false, saveState = true)
+//                navController.navigate(item.itemId)
+//            }
+//            true
+//        }
+//    }
 
     }
