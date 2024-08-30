@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:checked="true"
         android:text="Ego"
-        android:background="@drawable/bg_switch_ego"
+        android:background="@color/serenity"
         app:layout_constraintTop_toBottomOf="@id/switchRespect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
