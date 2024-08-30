@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.CompoundButton
 
 import android.widget.Toast
@@ -153,8 +155,23 @@ class HomeFragment :
         bottomNavigationView.isVisible = !binding.switchEgo.isChecked
         if (isChecked) {
             disableSwitches()
+            binding.ivEgo.visibility = View.VISIBLE
+            Toast.makeText(requireContext(),"I am sad for you, Click the button to break the stone and be happy",Toast.LENGTH_LONG).show()
         } else {
             enableSwitches()
+            val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.stone_break)
+            binding.ivEgo.startAnimation(animation)
+
+            animation.setAnimationListener(object : Animation.AnimationListener {
+                override fun onAnimationStart(animation: Animation?) {}
+
+                override fun onAnimationEnd(animation: Animation?) {
+                    binding.ivEgo.visibility = View.GONE
+                    Toast.makeText(requireContext(),"Congrats you break the stone now you can be happy",Toast.LENGTH_LONG).show()
+                }
+
+                override fun onAnimationRepeat(animation: Animation?) {}
+            })
         }
 
 

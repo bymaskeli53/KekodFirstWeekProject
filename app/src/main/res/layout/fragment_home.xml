@@ -85,4 +85,16 @@
         app:layout_constraintHorizontal_weight="1"
         android:layout_marginTop="16dp"/>
 
+
+    <ImageView
+        android:id="@+id/iv_ego"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/stone"
+        app:layout_constraintStart_toStartOf="@id/switchEgo"
+        app:layout_constraintTop_toBottomOf="@id/switchEgo"
+        app:layout_constraintEnd_toEndOf="@id/switchEgo"
+        android:layout_marginTop="24dp"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
