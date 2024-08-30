@@ -10,7 +10,9 @@ Project aims to show people how ego is harmful for people.
 
 - **Kotlin**: Entirely written in Kotlin.
 - **View Binding**: Simplifies view references.
-- - **Navigation Component**: Simplifes fragment navigations.
+- **Navigation Component**: Simplifes fragment navigations.
+- **Navigation Animations**: Navigating with animation between fragments.
+- **Background Sound**: When clicked respect button mourinho start speaking :)
 
 ## Getting Started
 
