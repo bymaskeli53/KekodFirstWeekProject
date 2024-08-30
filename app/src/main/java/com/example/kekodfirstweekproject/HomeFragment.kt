@@ -72,13 +72,13 @@ class HomeFragment :
         if (isChecked) {
             if (bottomNavigationView.menu.findItem(switchCaseAttributes.id) == null) {
                 if (bottomNavigationView.menu.size <= 4) {
-                   val menuItem = bottomNavigationView.menu.add(
+                    bottomNavigationView.menu.add(
                         Menu.NONE,
                         switchCaseAttributes.id,
                         Menu.NONE,
-                        switchCaseAttributes.title)
+                        switchCaseAttributes.title).setIcon(switchCaseAttributes.icon)
 
-                    menuItem.icon = null
+
 
 
 //                    bottomNavigationView.viewTreeObserver.addOnGlobalLayoutListener {
