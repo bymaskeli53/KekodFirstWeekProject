@@ -11,6 +11,7 @@ import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.core.view.size
+import androidx.transition.TransitionInflater
 
 import com.example.kekodfirstweekproject.databinding.FragmentHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
@@ -24,6 +25,8 @@ class HomeFragment :
 
 
     private lateinit var bottomNavigationView: BottomNavigationView
+
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
