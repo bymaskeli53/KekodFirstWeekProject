@@ -5,6 +5,7 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
+import android.view.ViewGroup
 import android.widget.CompoundButton
 
 import android.widget.Toast
@@ -12,6 +13,7 @@ import androidx.core.view.isVisible
 import androidx.core.view.size
 
 import com.example.kekodfirstweekproject.databinding.FragmentHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -70,11 +72,48 @@ class HomeFragment :
         if (isChecked) {
             if (bottomNavigationView.menu.findItem(switchCaseAttributes.id) == null) {
                 if (bottomNavigationView.menu.size <= 4) {
-                    bottomNavigationView.menu.add(
+                   val menuItem = bottomNavigationView.menu.add(
                         Menu.NONE,
                         switchCaseAttributes.id,
                         Menu.NONE,
-                        switchCaseAttributes.title).setIcon(switchCaseAttributes.icon)
+                        switchCaseAttributes.title)
+
+                    menuItem.icon = null
+
+
+//                    bottomNavigationView.viewTreeObserver.addOnGlobalLayoutListener {
+//                        val menuView = bottomNavigationView.getChildAt(0) as? ViewGroup
+//                        val itemView = menuView?.getChildAt(menuView.childCount - 1)
+//                        itemView?.let { view ->
+//                            view.alpha = 0f
+//                            view.scaleX = 0.5f
+//                            view.scaleY = 0.5f
+//
+//                            view.animate()
+//                                .alpha(1f)
+//                                .scaleX(1f)
+//                                .scaleY(1f)
+//                                .setDuration(300)
+//                                .withEndAction {
+//                                    menuItem.setIcon(switchCaseAttributes.icon)
+//
+//                                }
+//                                .start()
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//                        }
+//                    }
+
                     if (switchCaseAttributes.id == R.id.respectFragment) {
                         playRespectSound()
                     }
@@ -110,10 +149,8 @@ class HomeFragment :
 
         bottomNavigationView.isVisible = !binding.switchEgo.isChecked
         if (isChecked) {
-
             disableSwitches()
         } else {
-
             enableSwitches()
         }
 
