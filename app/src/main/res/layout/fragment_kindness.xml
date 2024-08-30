@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_kindness"
         style="@style/text_style_details"
         android:text="Kindness Fragment"
         android:fontFamily="@font/roboto_thin"

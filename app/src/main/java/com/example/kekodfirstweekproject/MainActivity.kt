@@ -17,7 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var navController: NavController
+    lateinit var navController: NavController
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,19 +40,4 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
-
-
-
-//    private fun bottomNavItemChangeListener(navView: BottomNavigationView) {
-//        navView.setOnItemSelectedListener { item ->
-//            if (item.itemId != navView.selectedItemId) {
-//                navController.popBackStack(item.itemId, inclusive = false, saveState = true)
-//                navController.navigate(item.itemId)
-//            }
-//            true
-//        }
-//    }
-
-    }
+}

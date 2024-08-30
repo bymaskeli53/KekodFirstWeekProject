@@ -42,6 +42,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.navigation.testing)
     val nav_version = "2.7.7"
 
     // navigation

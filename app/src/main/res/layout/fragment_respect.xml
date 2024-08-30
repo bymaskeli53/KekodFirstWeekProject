@@ -10,8 +10,8 @@
     <TextView
         android:id="@+id/textView"
         style="@style/text_style_details"
-        android:text="Respect Fragment"
         android:fontFamily="@font/roboto_thin"
+        android:text="Respect Fragment"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,8 +22,8 @@
         android:id="@+id/iv_respect"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/respect"
         android:layout_marginTop="24dp"
+        android:src="@drawable/respect"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
