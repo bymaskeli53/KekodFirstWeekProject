@@ -9,7 +9,8 @@
 
     <TextView
         android:id="@+id/textView"
-       style="@style/text_style_details"
+        style="@style/text_style_details"
+        android:fontFamily="@font/roboto_thin"
         android:text="Giving Fragment"
 
         app:layout_constraintBottom_toBottomOf="parent"

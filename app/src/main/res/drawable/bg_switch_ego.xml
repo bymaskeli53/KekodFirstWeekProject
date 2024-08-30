@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#643D03"/> <!-- Arka plan rengi -->
+    <solid android:color="#FFB13E"/> <!-- Arka plan rengi -->
     <corners android:radius="8dp"/> <!-- Köşelerin yumuşaklığı -->
 </shape>

@@ -11,7 +11,7 @@
         android:id="@+id/textView"
         style="@style/text_style_details"
         android:text="Happiness Fragment"
-
+        android:fontFamily="@font/roboto_thin"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
