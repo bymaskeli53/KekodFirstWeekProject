@@ -13,6 +13,7 @@ Project aims to show people how ego is harmful for people.
 - **Navigation Component**: Simplifes fragment navigations.
 - **Navigation Animations**: Navigating with animation between fragments.
 - **Background Sound**: When clicked respect button mourinho start speaking :)
+- **Android Test**: Instrumented Test with test libraries
 
 ## Getting Started
 
