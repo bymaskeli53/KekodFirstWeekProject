@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="maroon">#800000</color>
+    <color name="teal">#008080</color>
+    <color name="lime">#00FF00</color>
+    <color name="coral">#FF6F61</color>
+    <color name="serenity">#92A8D1</color>
+    <color name="tango">#DD4124</color>
 </resources>
