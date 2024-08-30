@@ -5,6 +5,9 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:forceDarkAllowed" tools:ignore="NewApi">true</item>
 
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@drawable/stone</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">#98D7C2</item>
+
     </style>
 
 
