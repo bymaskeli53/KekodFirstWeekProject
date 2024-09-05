@@ -14,6 +14,7 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import com.example.kekodfirstweekproject.R // Adjust package name if needed
+import org.hamcrest.CoreMatchers.not
 
 @RunWith(AndroidJUnit4::class)
 class MainActivityTest {
@@ -43,6 +44,12 @@ class MainActivityTest {
             // Verify that the NavController is initialized
             assertNotNull(activity.navController)
         }
+    }
+
+    @Test
+    fun testBottomNavigationViewIsDisplayed() {
+        // Verify that the BottomNavigationView is not displayed
+        onView(withId(R.id.bottom_nav_view)).check(matches(not(isDisplayed())))
     }
 
 
