@@ -10,6 +10,8 @@ import androidx.navigation.NavController
 import androidx.navigation.testing.TestNavHostController
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.matcher.ViewMatchers.isChecked
+import androidx.test.espresso.matcher.ViewMatchers.isNotChecked
 import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Test
@@ -59,8 +61,16 @@ class MainActivityTest {
 
         onView(withId(R.id.bottom_nav_view)).check(matches(isDisplayed()))
 
+    }
 
-
+    @Test
+    fun testDefaultSwitchStates() {
+        onView(withId(R.id.switchGiving)).check(matches(isNotChecked()))
+        onView(withId(R.id.switchKindness)).check(matches(isNotChecked()))
+        onView(withId(R.id.switchOptimism)).check(matches(isNotChecked()))
+        onView(withId(R.id.switchRespect)).check(matches(isNotChecked()))
+        onView(withId(R.id.switchHappiness)).check(matches(isNotChecked()))
+        onView(withId(R.id.switchEgo)).check(matches(isChecked()))
     }
 
 
