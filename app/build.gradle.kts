@@ -11,6 +11,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        compose = true
     }
 
     defaultConfig {
@@ -45,6 +46,23 @@ dependencies {
     implementation(libs.androidx.core)
     implementation(libs.androidx.navigation.testing)
     val nav_version = "2.7.7"
+
+    // compose
+    val composeBom = platform("androidx.compose:compose-bom:2024.06.00")
+    implementation(composeBom)
+    androidTestImplementation(composeBom)
+    implementation("androidx.compose.material3:material3")
+
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    debugImplementation("androidx.compose.ui:ui-tooling")
+
+    implementation("androidx.compose.material:material-icons-extended")
+
+    implementation("androidx.activity:activity-compose:1.9.0")
+
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+    implementation("androidx.compose.runtime:runtime-livedata")
+
 
     // navigation
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
