@@ -15,7 +15,8 @@ class KindnessFragment : BaseFragment<FragmentKindnessBinding>(FragmentKindnessB
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.tvKindness.text =
-            getString(R.string.the_quality_of_being_friendly_generous_and_considerate)
+       binding.composeView.setContent {
+           KindnessScreen()
+       }
     }
 }
