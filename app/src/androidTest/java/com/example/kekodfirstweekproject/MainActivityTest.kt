@@ -9,6 +9,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.navigation.NavController
 import androidx.navigation.testing.TestNavHostController
 import androidx.test.core.app.ApplicationProvider
+import androidx.test.espresso.action.ViewActions.click
 import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Test
@@ -47,9 +48,19 @@ class MainActivityTest {
     }
 
     @Test
-    fun testBottomNavigationViewIsDisplayed() {
+    fun testBottomNavigationViewIsNotDisplayed() {
         // Verify that the BottomNavigationView is not displayed
         onView(withId(R.id.bottom_nav_view)).check(matches(not(isDisplayed())))
+    }
+
+    @Test
+    fun testBottomNavigationViewIsDisplayed() {
+        onView(withId(R.id.switchEgo)).perform(click())
+
+        onView(withId(R.id.bottom_nav_view)).check(matches(isDisplayed()))
+
+
+
     }
 
 
